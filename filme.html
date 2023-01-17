@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>We Believe</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/filme.css">
+	<link rel="stylesheet" href="css/geral.css">
+	<link rel="stylesheet" href="css/plugins.css">
+</head>
+
+<body>
+	<nav class="menu-responsivo">
+		<ul>
+			<li><a href="./index.html">Início</a></li>
+			<li><a href="./sobre.html">Sobre</a></li>
+			<li><a href="./musicas.html">Músicas</a></li>
+			<li><a href="./filme.html">Filme</a></li>
+		</ul>
+	</nav>
+
+	<div class="layout">
+		<header>
+			<div class="container">
+
+				<div class="logo wow slideInLeft" data-wow-duration="0.2s" data-wow-delay="0.2s">
+					<a href="./index.html">
+						<img src="images/logo-tag-topo.svg" alt="Logo Topo Tag">
+					</a>
+				</div>
+
+				<div class="links">
+					<nav>
+						<ul>
+							<li><a href="./index.html">Início</a></li>
+							<li><a href="./sobre.html">Sobre</a></li>
+							<li><a href="./musicas.html">Músicas</a></li>
+							<li><a href="./filme.html">Filme</a></li>
+						</ul>
+					</nav>
+
+					<a class="toggle" href="javascript:;">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
+
+					<ul class="social">
+						<li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+							<a href="https://www.youtube.com/@webelieve543"><i class="youtube" target="_blank"></i>
+								<img src="images/youtube.png" alt="youtube">
+							</a>
+						</li>
+
+						<li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">
+							<a href="https://www.instagram.com/gp_webelieve/" target="_blank"><i class="instagram"></i>
+								<img src="images/instagram.png" alt="instagram">
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<h1>Filmes</h1>
+				<p><strong></strong></p>
+			</div>
+		</header>
+
+		<main>
+			<section class="container">
+				<div class="coluna-a">
+					<div class="itens">
+						<div class="foto wow fadeIn" data-wow-duration="3s" data-wow-delay="0,5s">
+							<img src="images/movie.png" alt="Capa do filme">
+						</div>
+					</div>
+				</div>
+				<div class="coluna-b">
+					<div class="textos">
+						<div>
+							<h1>Lançamento em breve!</h1>
+							<p>Assista ao trailer aqui</p>
+						</div>
+					</div>
+					<div class="trailer">
+						<iframe class="video" src="https://www.youtube.com/embed/jGi6UNI6vl8"
+							title="YouTube video player" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen> text-alingn: "center"</iframe>
+
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="logo-rodape">
+				<a href="https://thiagoagdev.com/">
+					<img src="images/logo-tag-rodape.svg" alt="Logo TAG Rodapé">
+				</a>
+				<p>2023 Todos os Direitos Reservados</p>
+			</div>
+		</footer>
+	</div>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/wow/dist/wow.min.js"></script>
+	<script>
+		$(function () {
+			$('.toggle').click(function () {
+				$('.layout').toggleClass('ativo');
+				$('.menu-responsivo').toggleClass('ativo');
+				$(this).toggleClass('ativo');
+			});
+			new WOW().init();
+		});
+
+		var host = "thiagoagdev.com"
+		if (window.location.host == host && window.location.protocol != "https:") {
+			window.location.protocol = "https:"
+		}
+	</script>
+</body>
+
+</html>
