@@ -5,7 +5,7 @@ $(document).ready(function () {
     $.ajax({
       type: 'post',
       dataType: 'json',
-      url: 'https://api.sheety.co/3f2b4c50b08e3901f43d14db1494fa21/mangas/manga',
+      url: 'https://api.sheety.co/3f2b4c50b08e3901f43d14db1494fa21/mangas',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({
         manga: {
