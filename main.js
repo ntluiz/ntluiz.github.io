@@ -1,4 +1,4 @@
-const $ = document.querySelector();
+const $ = document.querySelector;
 
 $(document).ready(function () {
   $('#signup').submit(function (e) {
