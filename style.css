@@ -2,6 +2,10 @@
   border: 2px solid blue;
 }
 
+div {
+  margin-bottom: 5px;
+}
+
 .manga {
   height: 74px;
   width: 300px;
