@@ -1,6 +1,6 @@
 const m1 = document.getElementById("m1");
 const btn = document.getElementById("btn");
-var last = document.getElementById("l1");
+
 
 btn.addEventListener("click", function () {
   last.innerText = input.value;
