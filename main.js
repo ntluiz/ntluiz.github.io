@@ -7,6 +7,5 @@ btn.addEventListener("click", function () {
 });
 m1.addEventListener("click", function () {
   var l1 = parseInt(document.getElementById("l1").innerText) + parseInt(1);
-  document.location.href =
-    "https://manhuaplus.com/manga/martial-peak/chapter-" + l1, "_blank/";
+  window.open('https://manhuaplus.com/manga/martial-peak/chapter-'+ l1, '_blank');
 });
