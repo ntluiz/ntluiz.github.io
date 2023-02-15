@@ -1,5 +1,3 @@
-const $ = document.querySelector;
-
 $(document).ready(function () {
   $('#signup').submit(function (e) {
     e.preventDefault();
