@@ -1,19 +1,25 @@
 var title = document.getElementById("title").value;
 var last = document.getElementById("last").value;
 
-let url = 'https://api.sheety.co/3f2b4c50b08e3901f43d14db1494fa21/teste/log';
-let body = {
-  log: {
-    title: title,
-    last: last
-  }
-}
-fetch(url, {
+fetch('https://sheetdb.io/api/v1/58f61be4dda40', {
   method: 'POST',
-  body: JSON.stringify(body)
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    data: [
+      {
+        'id': "INCREMENT",
+        'title': title,
+        'last': last
+      }
+    ]
+  })
 })
   .then((response) => response.json())
-  .then(json => {
-    // Do something with object
-    console.log(json.log);
-  });
+  .then((data) => console.log(data));
+
+fetch('https://sheetdb.io/api/v1/aux5lgr4vfrx2?sort_by=id&sort_order=asc&cast_numbers=last')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
