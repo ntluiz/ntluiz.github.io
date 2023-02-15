@@ -1,0 +1,41 @@
+.new {
+    margin-bottom: 12px;
+  }
+  .manga {
+    height: 74px;
+    width: 100%;
+    display: block;
+    border: 1px solid red;
+    background-color: grey;
+    border-radius: 5%;
+  }
+  .image {
+    float: left;
+    margin: 6px;
+    border: 1px solid red;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHuiX2VKWztB9JYvZI7QjwEAG_JoZNM_bwxA&usqp=CAU");
+    background-color: #cccccc;
+    background-size: cover;
+  }
+  .text {
+    float: left;
+    font-size: 15px;
+    vertical-align: center;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .author {
+    font-size: 12px;
+  }
+  
+  .last {
+    margin-right: 6px;
+    vertical-align: center;
+    float: right;
+    font-size: 12px;
+  }
+  
