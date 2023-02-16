@@ -1,9 +1,5 @@
-.btn {
-  border: 2px solid blue;
-}
-
-input{
-border-radius: 10px;
+input {
+  border-radius: 10px;
 }
 
 div {
@@ -26,7 +22,6 @@ div {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHuiX2VKWztB9JYvZI7QjwEAG_JoZNM_bwxA&usqp=CAU");
   background-color: #cccccc;
   background-size: cover;
 }

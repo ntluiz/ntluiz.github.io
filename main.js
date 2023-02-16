@@ -1,6 +1,58 @@
-fetch('https://sheetdb.io/api/v1/aux5lgr4vfrx2?sort_by=id&sort_order=asc&cast_numbers=last')
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+const manga = document.getElementsByClassName('manga');
+const list = $(".list");
+
+
+const myList = document.getElementsByClassName('list');
+
+fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error, status = ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    for (const product of data) {
+      const cmanga = document.createElement("div", { class: "manga", data: { index } });
+      const cimage = document.createElement("div", { class: "image" });
+      cimage.style.backgroundImage = product.image;
+      const ctext = document.createElement("div", { class: "text" });
+      const clast = document.createElement("p", { class: "last" });
+      clast.textContent = product.last;
+      const ctitle = document.createElement("h3", { class: "title" });
+      ctitle.textContent = product.title;
+      const cid = document.createElement("h5", { class: "id" });
+      cid.textContent = product.id;
+      <div id="m1" class="manga">
+        <div class="image"></div>
+        <div class="text">
+          <h1 id="t1" class="title">Manga Name</h1>
+          <h1 id="id1" class="id">id</h1>
+        </div>
+        <p id="l1" class="last">1
+        </p>
+      </div>
+      const nameElement = document.createElement("strong");
+      nameElement.textContent = product.title;
+
+      const priceElement = document.createElement("strong");
+      priceElement.textContent = `£${product.last}`;
+
+      cmanga.append(
+        cimage,
+        ctext.append(
+          ctitle, cid
+        ),
+        clast,
+      );
+      myList.appendChild(cmanga);
+    }
+  })
+  .catch((error) => {
+    const p = document.createElement("p");
+    p.appendChild(document.createTextNode(`Error: ${error.message}`));
+    document.body.insertBefore(p, myList);
+  });
 
 // Add
 

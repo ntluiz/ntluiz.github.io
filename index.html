@@ -11,12 +11,12 @@
 
 </head>
 
-<body class="d-flex align-items-center">
+<body class="align-items-center">
 	<div class="container">
 		<form id="add" method="post" action="https://sheetdb.io/api/v1/aux5lgr4vfrx2">
-			ID: <input name="data[id]">
-			Title: <input name="data[title]">
-			Last: <input name="data[last]">
+			ID: <input class="form-control" name="data[id]">
+			Title: <input class="form-control" name="data[title]">
+			Last: <input class="form-control" name="data[last]">
 			<button class="btn btn-primary" type="submit">Add</button>
 		</form>
 	</div>
@@ -24,21 +24,11 @@
 		<form id="update">
 			Title: <input id="titleup" name="data[title]">
 			Last: <input id="lastup" name="data[last]">
-			<button type="submit">Update</button>
+			<button class="btn btn-primary" type="submit">Update</button>
 		</form>
 	</div>
 	</div <section class="mangas">
-	<div class="list">
-		<div id="m1" class="manga">
-			<div class="image"></div>
-			<div class="text">
-				<h1 id="t1" class="title">Martial Peak</h1>
-				<h1 id="id1" class="id">1</h1>
-			</div>
-			<p id="l1" class="last">1234
-			</p>
-		</div>
-	</div>
+	<div class="list"></div>
 	</section>
 
 	<section class="novels">
