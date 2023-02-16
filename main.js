@@ -23,20 +23,6 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
       ctitle.textContent = product.title;
       const cid = document.createElement("h5", { class: "id" });
       cid.textContent = product.id;
-      <div id="m1" class="manga">
-        <div class="image"></div>
-        <div class="text">
-          <h1 id="t1" class="title">Manga Name</h1>
-          <h1 id="id1" class="id">id</h1>
-        </div>
-        <p id="l1" class="last">1
-        </p>
-      </div>
-      const nameElement = document.createElement("strong");
-      nameElement.textContent = product.title;
-
-      const priceElement = document.createElement("strong");
-      priceElement.textContent = `£${product.last}`;
 
       cmanga.append(
         cimage,
