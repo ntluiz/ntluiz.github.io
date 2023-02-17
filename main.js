@@ -35,8 +35,8 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
       const cid = document.createElement("h5");
       cid.className = "id";
       cid.textContent = product.id;
-      console.log(product.slice(-1));
-      var lid = product.slice(-1);
+      console.log(product.id.slice(-1));
+      var lid = product.id.slice(-1);
       console.log(lid);
       document.getElementById("linkinput").value = "=E" + lid + "&" + "C" + lid + "+1";
       select.append(
