@@ -3,6 +3,7 @@ const list = $(".list");
 
 
 const myList = document.getElementById('list');
+const select = document.getElementById("idup");
 
 fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
   .then((response) => {
@@ -13,17 +14,20 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
   })
   .then((data) => {
     for (const product of data) {
+      const option = document.createElement("option");
+      option.value = product.id + " - " + product.title;
+      option.textContent = product.last;
       const cmanga = document.createElement("div");
       cmanga.className = "manga";
       cmanga.id = "m" + product.id;
       const cimage = document.createElement("div");
       cimage.className = "image";
-      cimage.style.backgroundImage = product.image;
+      cimage.style.backgroundImage = "url(" + product.image + ")";
       const ctext = document.createElement("div");
       ctext.className = "text";
       const clast = document.createElement("p");
       clast.className = "last";
-      clast.textContent = "url(" & product.last & ")";
+      clast.textContent = product.last;
       const ctitle = document.createElement("h3");
       ctitle.className = "title";
       ctitle.textContent = product.title;
@@ -31,6 +35,9 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
       cid.className = "id";
       cid.textContent = product.id;
 
+      select.append(
+        option,
+      );
       ctext.append(
         cid, ctitle,
       );
@@ -66,8 +73,10 @@ form.addEventListener("submit", e => {
 // Update
 
 var update = document.getElementById('update');
-var urlupdate = 'https://sheetdb.io/api/v1/58f61be4dda40/title/' + document.getElementById('titleup').value;
+
 update.addEventListener("submit", e => {
+  var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2/id/' + document.getElementById('idup').value;
+  console.log(urlupdate);
   e.preventDefault();
   fetch(urlupdate, {
     method: 'PATCH',
