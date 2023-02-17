@@ -15,8 +15,8 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
   .then((data) => {
     for (const product of data) {
       const option = document.createElement("option");
-      option.value = product.id + " - " + product.title;
-      option.textContent = product.last;
+      option.value = product.id;
+      option.textContent = product.id + " - " + product.title;
       const cmanga = document.createElement("div");
       cmanga.className = "manga";
       cmanga.id = "m" + product.id;
