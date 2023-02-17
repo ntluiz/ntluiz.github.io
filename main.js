@@ -2,7 +2,7 @@ const manga = document.getElementsByClassName('manga');
 const list = $(".list");
 
 
-const myList = document.getElementsByClassName('list');
+const myList = document.getElementById('list');
 
 fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
   .then((response) => {
@@ -13,31 +13,38 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
   })
   .then((data) => {
     for (const product of data) {
-      const cmanga = document.createElement("div", { class: "manga", data: { index } });
-      const cimage = document.createElement("div", { class: "image" });
+      const cmanga = document.createElement("div");
+      cmanga.className = "manga";
+      cmanga.id = "m" + product.id;
+      const cimage = document.createElement("div");
+      cimage.className = "image";
       cimage.style.backgroundImage = product.image;
-      const ctext = document.createElement("div", { class: "text" });
-      const clast = document.createElement("p", { class: "last" });
-      clast.textContent = product.last;
-      const ctitle = document.createElement("h3", { class: "title" });
+      const ctext = document.createElement("div");
+      ctext.className = "text";
+      const clast = document.createElement("p");
+      clast.className = "last";
+      clast.textContent = "url(" & product.last & ")";
+      const ctitle = document.createElement("h3");
+      ctitle.className = "title";
       ctitle.textContent = product.title;
-      const cid = document.createElement("h5", { class: "id" });
+      const cid = document.createElement("h5");
+      cid.className = "id";
       cid.textContent = product.id;
 
+      ctext.append(
+        cid, ctitle,
+      );
       cmanga.append(
         cimage,
-        ctext.append(
-          ctitle, cid
-        ),
+        ctext,
         clast,
       );
+
       myList.appendChild(cmanga);
     }
   })
   .catch((error) => {
-    const p = document.createElement("p");
-    p.appendChild(document.createTextNode(`Error: ${error.message}`));
-    document.body.insertBefore(p, myList);
+    console.log(`Error: ${error.message}`);
   });
 
 // Add
