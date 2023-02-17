@@ -16,9 +16,12 @@
 		<div class="row">
 			<div class="col-md-5">
 				<form id="add" method="post" action="https://sheetdb.io/api/v1/aux5lgr4vfrx2">
-					ID: <input class="form-control" name="data[id]">
+					ID: <input class="form-control" name="data[id]" value="=LIN()-1">
 					Title: <input class="form-control" name="data[title]">
 					Last: <input class="form-control" name="data[last]">
+					Url: <input class="form-control" name="data[url]">
+					Link: <input class="form-control" id="linkinput" name="data[link]">
+					Image: <input class=" form-control" name="data[image]">
 					<button class="btn btn-primary mt-2 align-self-center" type="submit">Add</button>
 				</form>
 			</div>
