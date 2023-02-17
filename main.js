@@ -20,6 +20,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
       const cmanga = document.createElement("div");
       cmanga.className = "manga";
       cmanga.id = "m" + product.id;
+      cmanga.location.href = product.link;
       const cimage = document.createElement("div");
       cimage.className = "image";
       cimage.style.backgroundImage = "url(" + product.image + ")";
