@@ -36,7 +36,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
       cid.className = "id";
       cid.textContent = product.id;
       console.log(product.id);
-      console.log(product.id.slice(-1));
+      console.log(product.id.pop());
       var lid = product.id.slice(-1);
       console.log(lid);
       document.getElementById("linkinput").value = "=E" + lid + "&" + "C" + lid + "+1";
