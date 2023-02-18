@@ -35,11 +35,9 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
       const cid = document.createElement("h5");
       cid.className = "id";
       cid.textContent = product.id;
-      //console.log(product);
-      //console.log(product.pop());
-      // var lid = product.pop().id;
-      // console.log(lid);
-      // document.getElementById("linkinput").value = "=E" + lid + "&" + "C" + lid + "+1";
+      const lid = data.length + 2;
+      document.getElementById("linkinput").value =
+        "=E" + lid + "&" + "C" + lid + "+1";
       select.append(
         option,
       );
