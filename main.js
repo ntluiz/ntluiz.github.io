@@ -1,6 +1,7 @@
 const manga = document.getElementsByClassName('manga');
 const list = $(".list");
-
+const editadd = document.getElementById('editadd');
+const editupdate = document.getElementById('editupdate');
 
 const myList = document.getElementById('list');
 const select = document.getElementById("idup");
@@ -17,10 +18,11 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
       const option = document.createElement("option");
       option.value = product.id;
       option.textContent = product.id + " - " + product.title;
-      const cmanga = document.createElement("div");
+      const cmanga = document.createElement("a");
       cmanga.className = "manga";
       cmanga.id = "m" + product.id;
-      cmanga.onClick = "window.open(" + product.link + ")";
+      cmanga.href = product.link;
+      cmanga.target = "_blank";
       const cimage = document.createElement("div");
       cimage.className = "image";
       cimage.style.backgroundImage = "url(" + product.image + ")";
@@ -99,4 +101,20 @@ update.addEventListener("submit", e => {
       // you can put any JS code here
       alert('Ok!')
     });
+});
+
+editadd.addEventListener("click", function () {
+  if (editadd.classList.contains('collapsed')) {
+    editadd.innerText = "Off";
+  } else {
+    editadd.innerText = "On";
+  }
+});
+
+editupdate.addEventListener("click", function () {
+  if (editupdate.classList.contains('collapsed')) {
+    editupdate.innerText = "Off";
+  } else {
+    editupdate.innerText = "On";
+  }
 });
