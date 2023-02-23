@@ -5,7 +5,7 @@ const editupdate = document.getElementById('editupdate');
 
 const myList = document.getElementById('list');
 const select = document.getElementById("idup");
-const dateup = document.getElementById("date");
+const dateup = document.getElementById("dateup");
 
 fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   .then((response) => {
