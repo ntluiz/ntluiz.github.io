@@ -27,7 +27,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados")
     for (const prod of data) {
       const option = document.createElement("option");
       option.value = prod.id;
-      option.textContent = prod.id + " - " + prod.title;
+      option.textContent = prod.title;
       select.append(
         option,
       );
@@ -119,6 +119,7 @@ update.addEventListener("submit", e => {
     body: JSON.stringify({
       data: {
         'last': document.getElementById('lastup').value,
+        'date': dateup.value,
       }
     })
   })
