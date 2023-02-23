@@ -5,6 +5,7 @@ const editupdate = document.getElementById('editupdate');
 
 const myList = document.getElementById('list');
 const select = document.getElementById("idup");
+
 const dateup = document.getElementById("dateup");
 var dataAtual = new Date();
 var dia = dataAtual.getDate();
@@ -13,6 +14,7 @@ var ano = dataAtual.getFullYear();
 var horas = dataAtual.getHours();
 var minutos = dataAtual.getMinutes();
 var date = dia + "/" + mes + "/" + ano + " " + horas + ":" + minutos + ":00";
+dateup.value = date;
 
 fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   .then((response) => {
@@ -23,9 +25,6 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   })
   .then((data) => {
     for (const product of data) {
-      const option = document.createElement("option");
-      option.value = product.id;
-      option.textContent = product.id + " - " + product.title;
       const cmanga = document.createElement("a");
       cmanga.className = "manga";
       cmanga.id = "m" + product.id;
@@ -48,10 +47,6 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       const lid = data.length + 2;
       document.getElementById("linkinput").value =
         "=E" + lid + "&" + "C" + lid + "+1";
-      dateup.value = date
-      select.append(
-        option,
-      );
       ctext.append(
         cid, ctitle,
       );
@@ -67,7 +62,26 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   .catch((error) => {
     console.log(`Error: ${error.message}`);
   });
-
+fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error, status = ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    for (const product of data) {
+      const option = document.createElement("option");
+      option.value = product.id;
+      option.textContent = product.id + " - " + product.title;
+      select.append(
+        option,
+      );
+    }
+  })
+  .catch((error) => {
+    console.log(`Error: ${error.message}`);
+  });
 // Add
 
 var form = document.getElementById('add');
