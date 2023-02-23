@@ -13,7 +13,8 @@ var mes = (dataAtual.getMonth() + 1);
 var ano = dataAtual.getFullYear();
 var horas = dataAtual.getHours();
 var minutos = dataAtual.getMinutes();
-var date = dia + "/" + mes + "/" + ano + " " + horas + ":" + minutos + ":00";
+var segundos = dataAtual.getSeconds()
+var date = dia + "/" + mes + "/" + ano + " " + horas + ":" + minutos + ":" + segundos;
 dateup.value = date;
 
 fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados")
