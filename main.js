@@ -70,10 +70,10 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados")
     return response.json();
   })
   .then((data) => {
-    for (const product of data) {
+    for (const prod of data) {
       const option = document.createElement("option");
-      option.value = product.id;
-      option.textContent = product.id + " - " + product.title;
+      option.value = prod.id;
+      option.textContent = prod.id + " - " + prod.title;
       select.append(
         option,
       );
