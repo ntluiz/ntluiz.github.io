@@ -6,7 +6,7 @@ const editupdate = document.getElementById('editupdate');
 const myList = document.getElementById('list');
 const select = document.getElementById("idup");
 
-fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2")
+fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   .then((response) => {
     if (!response.ok) {
       throw new Error(`HTTP error, status = ${response.status}`);
