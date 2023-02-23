@@ -16,6 +16,27 @@ var minutos = dataAtual.getMinutes();
 var date = dia + "/" + mes + "/" + ano + " " + horas + ":" + minutos + ":00";
 dateup.value = date;
 
+fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error, status = ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    for (const prod of data) {
+      const option = document.createElement("option");
+      option.value = prod.id;
+      option.textContent = prod.id + " - " + prod.title;
+      select.append(
+        option,
+      );
+    }
+  })
+  .catch((error) => {
+    console.log(`Error: ${error.message}`);
+  });
+
 fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   .then((response) => {
     if (!response.ok) {
@@ -47,6 +68,8 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       const lid = data.length + 2;
       document.getElementById("linkinput").value =
         "=E" + lid + "&" + "C" + lid + "+1";
+      document.getElementById("dateinput").value =
+        date;
       ctext.append(
         cid, ctitle,
       );
@@ -62,26 +85,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   .catch((error) => {
     console.log(`Error: ${error.message}`);
   });
-fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error, status = ${response.status}`);
-    }
-    return response.json();
-  })
-  .then((data) => {
-    for (const prod of data) {
-      const option = document.createElement("option");
-      option.value = prod.id;
-      option.textContent = prod.id + " - " + prod.title;
-      select.append(
-        option,
-      );
-    }
-  })
-  .catch((error) => {
-    console.log(`Error: ${error.message}`);
-  });
+
 // Add
 
 var form = document.getElementById('add');
@@ -103,7 +107,7 @@ form.addEventListener("submit", e => {
 var update = document.getElementById('update');
 
 update.addEventListener("submit", e => {
-  var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados/id/' + document.getElementById('idup').value;
+  var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2/id/' + document.getElementById('idup').value;
   console.log(urlupdate);
   e.preventDefault();
   fetch(urlupdate, {
