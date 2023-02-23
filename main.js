@@ -5,6 +5,7 @@ const editupdate = document.getElementById('editupdate');
 
 const myList = document.getElementById('list');
 const select = document.getElementById("idup");
+const dateup = document.getElementById("date");
 
 fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   .then((response) => {
@@ -40,6 +41,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       const lid = data.length + 2;
       document.getElementById("linkinput").value =
         "=E" + lid + "&" + "C" + lid + "+1";
+      dateup.value = Date.now()
       select.append(
         option,
       );
