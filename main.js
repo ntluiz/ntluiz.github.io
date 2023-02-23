@@ -82,7 +82,7 @@ form.addEventListener("submit", e => {
 var update = document.getElementById('update');
 
 update.addEventListener("submit", e => {
-  var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2/id/' + document.getElementById('idup').value;
+  var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados/id/' + document.getElementById('idup').value;
   console.log(urlupdate);
   e.preventDefault();
   fetch(urlupdate, {
