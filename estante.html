@@ -13,44 +13,121 @@
 
 <body class="align-items-center">
 	<div id="edit" class="container">
-		<div class="row mt-3 mb-2">
-			<div class="col-md-5">
-				<div class="text-center">
-					Add: <button id="editadd" class="btn btn-secondary edit" type="button" data-bs-toggle="collapse"
-						data-bs-target="#add" aria-expanded="false" aria-controls="add">
-						Off
-					</button>
-				</div>
-				<form class="collapse" id="add" method="post"
-					action="https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados">
-					ID: <input class="form-control" name="data[id]" value="=LIN()-1">
-					Title: <input class="form-control" name="data[title]">
-					Last: <input class="form-control" name="data[last]">
-					Url: <input class="form-control" name="data[url]">
-					Link: <input class="form-control" id="linkinput" name="data[link]">
-					Image: <input class=" form-control" name="data[image]">
-					Date: <input class=" form-control" id="dateinput" name="data[date]">
-					<button class="btn btn-secondary mt-2 align-self-center" type="submit">Add</button>
-				</form>
+		<!-- Button trigger modal -->
+		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+			<div class="btn-group me-2" role="group" aria-label="First group">
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newManga">New
+					Manga</button>
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newNovel">New
+					Novel</button>
 			</div>
-			<div class="col-md-5">
-				<div class="text-center mb-4">
-					Update: <button id="editupdate" class="btn btn-secondary edit" type="button"
-						data-bs-toggle="collapse" data-bs-target="#update" aria-expanded="false" aria-controls="update">
-						Off
-					</button>
-				</div>
-				<div class="container">
-					<form class="collapse" id="update">
-						<select name="idup" id="idup" class="form-select"></select>
-						Last: <input class="form-control" id="lastup">
-						Date: <input class=" form-control" id="dateup">
-						<button class="btn btn-secondary mt-2 align-self-center" type="submit">Update</button>
-					</form>
+			<div class="btn-group me-2" role="group" aria-label="Second group">
+				<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#upManga">Update
+					Manga</button>
+				<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#upNovel">Update
+					Novel</button>
+			</div>
+		</div>
+
+		<!-- Modal New Manga -->
+		<div class="modal fade" id="newManga" tabindex="-1" aria-labelledby="newMangaLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="newMangaLabel">New Manga</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form id="add" method="post" action="https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados">
+							ID: <input class="form-control" name="data[id]" value="=LIN()-1">
+							Title: <input class="form-control" name="data[title]">
+							Last: <input class="form-control" name="data[last]">
+							Url: <input class="form-control" name="data[url]">
+							Link: <input class="form-control" id="linkinput" name="data[link]">
+							Image: <input class=" form-control" name="data[image]">
+							Date: <input class=" form-control" id="dateinput" name="data[date]">
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary mt-2 align-self-center" type="submit">Add</button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- Modal New Novel -->
+	<div class="modal fade" id="newNovel" tabindex="-1" aria-labelledby="newNovelLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="newNovelLabel">New Novel</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form id="addnovel" method="post"
+						action="https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados_novel">
+						ID: <input class="form-control" name="data[id]" value="=LIN()-1">
+						Title: <input class="form-control" name="data[title]">
+						Last: <input class="form-control" name="data[last]">
+						Url: <input class="form-control" name="data[url]">
+						Link: <input class="form-control" id="linkinputnovel" name="data[link]">
+						Image: <input class=" form-control" name="data[image]">
+						Date: <input class=" form-control" id="dateinputnovel" name="data[date]">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary mt-2 align-self-center" type="submit">Add</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Update Manga -->
+	<div class="modal fade" id="upManga" tabindex="-1" aria-labelledby="upMangaLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="upMangaLabel">Update Manga</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form id="update">
+						<select name="idup" id="idup" class="form-select"></select>
+						Last: <input class="form-control" id="lastup">
+						Date: <input class=" form-control" id="dateup">
+					</form>
+
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary mt-2 align-self-center" type="submit">Update</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Update Novel -->
+	<div class="modal fade" id="upNovel" tabindex="-1" aria-labelledby="upNovelLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="upNovelLabel">Update Novel</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form id="updatenovel">
+						<select name="idup" id="idupnovel" class="form-select"></select>
+						Last: <input class="form-control" id="lastupnovel">
+						Date: <input class=" form-control" id="dateupnovel">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary mt-2 align-self-center" type="submit">Update</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Estante -->
 	<div id="estante" class="container">
 		<div class="row">
 			<div class="col-md-5">
