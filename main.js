@@ -100,7 +100,7 @@ form.addEventListener("submit", e => {
 
 // Update
 
-var update = document.getElementById('update');
+var update = document.getElementById('btnupdate');
 
 update.addEventListener("submit", e => {
   var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2/id/' + document.getElementById('idup').value;
@@ -140,9 +140,9 @@ var horas = dataAtual.getHours();
 var minutos = dataAtual.getMinutes();
 var segundos = dataAtual.getSeconds()
 var date2 = dia + "/" + mes + "/" + ano + " " + horas + ":" + minutos + ":" + segundos;
-dateup.value = date;
+dateup2.value = date;
 
-fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados_novel")
+fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dadosnovel")
   .then((response) => {
     if (!response.ok) {
       throw new Error(`HTTP error, status = ${response.status}`);
@@ -150,10 +150,10 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados_novel")
     return response.json();
   })
   .then((data) => {
-    for (const prod of data) {
+    for (const prodn of data) {
       const option2 = document.createElement("option");
-      option2.value = prod.id;
-      option2.textContent = prod.title;
+      option2.value = prodn.id;
+      option2.textContent = prodn.title;
       select2.append(
         option2,
       );
@@ -171,26 +171,26 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel")
     return response.json();
   })
   .then((data) => {
-    for (const product of data) {
+    for (const productn of data) {
       const cnovel = document.createElement("a");
       cnovel.className = "novel";
-      cnovel.id = "n" + product.id;
-      cnovel.href = product.link;
+      cnovel.id = "n" + productn.id;
+      cnovel.href = productn.link;
       cnovel.target = "_blank";
       const cimagen = document.createElement("div");
       cimagen.className = "image";
-      cimagen.style.backgroundImage = "url(" + product.image + ")";
+      cimagen.style.backgroundImage = "url(" + productn.image + ")";
       const ctextn = document.createElement("div");
       ctextn.className = "text";
       const clastn = document.createElement("p");
       clastn.className = "last";
-      clastn.textContent = product.last;
+      clastn.textContent = productn.last;
       const ctitlen = document.createElement("h3");
       ctitlen.className = "title";
-      ctitlen.textContent = product.title;
+      ctitlen.textContent = productn.title;
       const cidn = document.createElement("h5");
       cidn.className = "id";
-      cidn.textContent = product.id;
+      cidn.textContent = productn.id;
       const lidn = data.length + 2;
       document.getElementById("linkinputnovel").value =
         "=E" + lidn + "&" + "C" + lidn + "+1";
