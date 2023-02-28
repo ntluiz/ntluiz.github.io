@@ -12,7 +12,7 @@ var segundos = dataAtual.getSeconds()
 var date = dia + "/" + mes + "/" + ano + " " + horas + ":" + minutos + ":" + segundos;
 dateup.value = date;
 
-fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados")
+fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   .then((response) => {
     if (!response.ok) {
       throw new Error(`HTTP error, status = ${response.status}`);
@@ -22,7 +22,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados")
   .then((data) => {
     for (const prod of data) {
       const option = document.createElement("option");
-      option.value = prod.id;
+      option.value = prod.title;
       option.textContent = prod.title;
       select.append(
         option,
@@ -103,7 +103,7 @@ form.addEventListener("submit", e => {
 var update = document.getElementById('update');
 
 update.addEventListener("submit", e => {
-  var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2/id/' + document.getElementById('idup').value;
+  var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2/title/' + document.getElementById('titleup').value;
   console.log(urlupdate);
   e.preventDefault();
   fetch(urlupdate, {
