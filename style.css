@@ -1,72 +1,109 @@
-.manga {
-  height: 80px;
-  width: 95%;
-  display: block;
-  border: 1px solid #00767ed8;
-  background-color: #00abb8;
-  margin-bottom: 15px;
-  display: flex;
-  padding: 8px 16px;
-  border-radius: 5px;
-  box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
-  align-items: center;
+@media (max-width: 899px) {
+  .text {
+    font-family: 'Rockwell';
+    float: left;
+    font-size: 12px;
+    vertical-align: center;
+    flex: 1;
+    padding: 0 16px;
+  }
+
+  .id {
+    font-family: 'Rockwell';
+    font-size: 11px;
+    color: #000000;
+  }
+
+  .title {
+    font-family: 'Rockwell';
+    font-size: 16px;
+    color: #000000;
+  }
+
+  .last {
+    font-family: 'Rockwell';
+    margin-top: 0;
+    margin-bottom: 0;
+    float: right;
+    font-size: 16px;
+    color: #000000;
+  }
+
 }
 
-.image {
-  margin: 0 8px;
-  border: 1px solid #00767ed8;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  background-color: #cccccc;
-  background-size: cover;
-}
+@media (min-width: 900px) {
 
-.text {
-  font-family: 'Rockwell';
-  float: left;
-  font-size: 15px;
-  vertical-align: center;
-  flex: 1;
-  padding: 0 16px;
-}
 
-.id {
-  font-family: 'Rockwell';
-  font-size: 14px;
-  color: #474747;
-}
+  .manga {
+    height: 80px;
+    width: 95%;
+    display: block;
+    border: 1px solid #00767ed8;
+    background-color: #00abb8;
+    margin-bottom: 15px;
+    display: flex;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+    align-items: center;
+  }
 
-.title {
-  font-family: 'Rockwell';
-  font-size: 20px;
-  color: #474747;
-}
+  .image {
+    margin: 0 8px;
+    border: 1px solid #00767ed8;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #cccccc;
+    background-size: cover;
+  }
 
-.last {
-  font-family: 'Rockwell';
-  margin-top: 0;
-  margin-bottom: 0;
-  float: right;
-  font-size: 20px;
-  color: #474747;
-}
+  .text {
+    font-family: 'Rockwell';
+    float: left;
+    font-size: 15px;
+    vertical-align: center;
+    flex: 1;
+    padding: 0 16px;
+  }
 
-a:hover {
-  text-decoration: none !important;
-  color: #474747 !important;
-}
+  .id {
+    font-family: 'Rockwell';
+    font-size: 14px;
+    color: #000000;
+  }
 
-.novel {
-  height: 80px;
-  width: 95%;
-  display: block;
-  border: 1px solid #6c757dc5;
-  background-color: #6c757d;
-  margin-bottom: 15px;
-  display: flex;
-  padding: 8px 16px;
-  border-radius: 5px;
-  box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
-  align-items: center;
+  .title {
+    font-family: 'Rockwell';
+    font-size: 20px;
+    color: #000000;
+  }
+
+  .last {
+    font-family: 'Rockwell';
+    margin-top: 0;
+    margin-bottom: 0;
+    float: right;
+    font-size: 20px;
+    color: #000000;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+    color: #000000 !important;
+  }
+
+  .novel {
+    height: 80px;
+    width: 95%;
+    display: block;
+    border: 1px solid #6c757dc5;
+    background-color: #6c757d;
+    margin-bottom: 15px;
+    display: flex;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+    align-items: center;
+  }
 }
