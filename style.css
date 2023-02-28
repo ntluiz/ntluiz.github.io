@@ -34,7 +34,11 @@
 
   .id {
     font-family: 'Rockwell';
+    vertical-align: center;
     font-size: 11px;
+    float: left;
+    flex: 1;
+    padding: 0 16px;
     color: #000000;
   }
 
@@ -111,7 +115,11 @@
 
   .id {
     font-family: 'Rockwell';
+    vertical-align: center;
     font-size: 14px;
+    float: left;
+    flex: 1;
+    padding: 0 16px;
     color: #000000;
   }
 

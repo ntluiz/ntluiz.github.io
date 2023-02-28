@@ -67,9 +67,10 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       document.getElementById("dateinput").value =
         date;
       ctext.append(
-        cid, ctitle,
+        ctitle,
       );
       cmanga.append(
+        cid,
         cimage,
         ctext,
         clast,
