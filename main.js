@@ -1,5 +1,5 @@
 const myList = document.getElementById('list');
-const select = document.getElementById("idup");
+const select = document.getElementById("titleup");
 
 const dateup = document.getElementById("dateup");
 var dataAtual = new Date();
