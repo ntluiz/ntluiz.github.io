@@ -35,7 +35,7 @@
   .id {
     font-family: 'Rockwell';
     vertical-align: center;
-    font-size: 11px;
+    font-size: 15px;
     float: left;
     flex: 1;
     padding: 0 16px;
@@ -46,6 +46,7 @@
     font-family: 'Rockwell';
     font-size: 16px;
     color: #000000;
+    font-weight: 600;
   }
 
   .last {
@@ -116,7 +117,7 @@
   .id {
     font-family: 'Rockwell';
     vertical-align: center;
-    font-size: 14px;
+    font-size: 18px;
     float: left;
     flex: 1;
     padding: 0 16px;
@@ -127,6 +128,7 @@
     font-family: 'Rockwell';
     font-size: 20px;
     color: #000000;
+    font-weight: 600;
   }
 
   .last {
