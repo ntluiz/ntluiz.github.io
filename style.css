@@ -55,6 +55,7 @@
     margin-bottom: 0;
     float: right;
     font-size: 16px;
+    font-weight: 700;
     color: #000000;
   }
   a:hover {
@@ -137,6 +138,7 @@
     margin-bottom: 0;
     float: right;
     font-size: 20px;
+    font-weight: 700;
     color: #000000;
   }
 
