@@ -196,7 +196,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel")
         "=E" + lidn + "&" + "C" + lidn + "+1";
       document.getElementById("dateinputnovel").value =
         date2;
-      ctext2.append(
+      ctextn.append(
         cidn, ctitlen,
       );
       cnovel.append(
@@ -214,10 +214,10 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel")
 
 // Add
 
-var form = document.getElementById('addnovel');
-form.addEventListener("submit", e => {
+var form2 = document.getElementById('addnovel');
+form2.addEventListener("submit", e => {
   e.preventDefault();
-  fetch(form.action, {
+  fetch(form2.action, {
     method: "POST",
     body: new FormData(document.getElementById("addnovel")),
   }).then(
@@ -230,13 +230,13 @@ form.addEventListener("submit", e => {
 
 // Update
 
-var update = document.getElementById('updatenovel');
+var update2 = document.getElementById('updatenovel');
 
-update.addEventListener("submit", e => {
-  var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2/id/' + document.getElementById('idupnovel').value;
+update2.addEventListener("submit", e => {
+  var urlupdate2 = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel/id/' + document.getElementById('idupnovel').value;
   console.log(urlupdate);
   e.preventDefault();
-  fetch(urlupdate, {
+  fetch(urlupdate2, {
     method: 'PATCH',
     headers: {
       'Accept': 'application/json',
