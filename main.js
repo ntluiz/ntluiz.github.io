@@ -100,7 +100,7 @@ form.addEventListener("submit", e => {
 
 // Update
 
-var update = document.getElementById('btnupdate');
+var update = document.getElementById('update');
 
 update.addEventListener("submit", e => {
   var urlupdate = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2/id/' + document.getElementById('idup').value;
