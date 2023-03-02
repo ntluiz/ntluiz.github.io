@@ -35,6 +35,7 @@ i {
   text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
 }
 
+/*
 @media (max-width: 899px) {
   .manga {
     height: 80px;
