@@ -1,3 +1,40 @@
+.d-flex::-webkit-scrollbar {
+  display: none;
+}
+
+.d-flex {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+i {
+  float: right;
+}
+
+.img {
+  width: 18px;
+  height: 25px;
+}
+
+.card {
+  width: 9rem;
+  height: 12rem;
+  background-size: cover;
+}
+
+.card-title {
+  text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
+  font-family: "Helvetica";
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.fa-solid {
+  text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
+}
+
 @media (max-width: 899px) {
   .manga {
     height: 80px;

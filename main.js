@@ -42,22 +42,21 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   })
   .then((data) => {
     for (const product of data) {
+      const col = document.createElement("div");
+      col.className = "col m-3";
       const cmanga = document.createElement("a");
-      cmanga.className = "manga";
+      cmanga.className = "card";
       cmanga.id = "m" + product.id;
       cmanga.href = product.link;
       cmanga.target = "_blank";
-      const cimage = document.createElement("div");
-      cimage.className = "image";
-      cimage.style.backgroundImage = "url(" + product.image + ")";
+      cmanga.style.backgroundImage = "url(" + product.image + ")";
       const ctext = document.createElement("div");
-      ctext.className = "text";
-      const clast = document.createElement("p");
-      clast.className = "last";
+      ctext.className = "card-img-overlay d-flex justify-content-between align-items-baseline";
+      const clast = document.createElement("h5");
+      clast.className = "card-title last";
       clast.textContent = product.last;
-      const ctitle = document.createElement("h3");
-      ctitle.className = "title";
-      ctitle.textContent = product.title;
+      const cicon = document.createElement("i");
+      cicon.className = "fa-solid fa-bars";
       const cid = document.createElement("h5");
       cid.className = "id";
       cid.textContent = product.id;
@@ -67,16 +66,15 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       document.getElementById("dateinput").value =
         date;
       ctext.append(
-        ctitle,
+        clast, cicon,
       );
       cmanga.append(
-        cid,
-        cimage,
         ctext,
-        clast,
       );
-
-      myList.appendChild(cmanga);
+      col.append(
+        cmanga,
+      );
+      myList.appendChild(col);
     }
   })
   .catch((error) => {
