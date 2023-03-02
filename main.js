@@ -171,22 +171,21 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel")
   })
   .then((data) => {
     for (const productn of data) {
+      const coln = document.createElement("div");
+      coln.className = "col m-3";
       const cnovel = document.createElement("a");
-      cnovel.className = "novel";
+      cnovel.className = "card";
       cnovel.id = "n" + productn.id;
       cnovel.href = productn.link;
       cnovel.target = "_blank";
-      const cimagen = document.createElement("div");
-      cimagen.className = "image";
-      cimagen.style.backgroundImage = "url(" + productn.image + ")";
+      cnovel.style.backgroundImage = "url(" + productn.image + ")";
       const ctextn = document.createElement("div");
-      ctextn.className = "text";
-      const clastn = document.createElement("p");
-      clastn.className = "last";
+      ctextn.className = "card-img-overlay d-flex justify-content-between align-items-baseline";
+      const clastn = document.createElement("h5");
+      clastn.className = "card-title last";
       clastn.textContent = productn.last;
-      const ctitlen = document.createElement("h3");
-      ctitlen.className = "title";
-      ctitlen.textContent = productn.title;
+      const ciconn = document.createElement("i");
+      ciconn.className = "fa-solid fa-bars";
       const cidn = document.createElement("h5");
       cidn.className = "id";
       cidn.textContent = productn.id;
@@ -195,16 +194,18 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel")
         "=E" + lidn + "&" + "C" + lidn + "+1";
       document.getElementById("dateinputnovel").value =
         date2;
+
       ctextn.append(
-        cidn, ctitlen,
+        clastn, ciconn,
       );
       cnovel.append(
-        cimagen,
         ctextn,
-        clastn,
+      );
+      coln.append(
+        cnovel,
       );
 
-      myList2.appendChild(cnovel);
+      myList2.appendChild(coln);
     }
   })
   .catch((error) => {

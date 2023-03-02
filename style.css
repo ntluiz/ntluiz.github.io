@@ -1,13 +1,3 @@
-.d-flex::-webkit-scrollbar {
-  display: none;
-}
-
-.d-flex {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  cursor: grab;
-}
-
 i {
   float: right;
 }
@@ -24,15 +14,14 @@ i {
 }
 
 .card-title {
-  text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
-  font-family: "Helvetica";
-  font-weight: 700;
+  text-shadow: 1px 1px 5px white, 1px -1px 5px white, -1px 1px 5px white, -1px -1px 5px white;
+  font-family: Impact;
   margin: 0;
   padding: 0;
 }
 
 .fa-solid {
-  text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
+  text-shadow: 1px 1px 5px white, 1px -1px 5px white, -1px 1px 5px white, -1px -1px 5px white;
 }
 
 a:hover {
@@ -43,6 +32,34 @@ a:hover {
 a {
   text-decoration: none !important;
   color: #000000 !important;
+}
+
+@media (max-width: 899px) {
+  .d-flex::-webkit-scrollbar {
+    display: none;
+  }
+
+  .d-flex {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .d-flex::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .d-flex::-webkit-scrollbar-track {
+    background: black;
+    border-radius: 20px;
+  }
+
+  .d-flex::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 2px solid black;
+  }
 }
 
 /*
