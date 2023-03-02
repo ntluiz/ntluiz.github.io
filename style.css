@@ -35,6 +35,16 @@ i {
   text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
 }
 
+a:hover {
+  text-decoration: none !important;
+  color: #000000 !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: #000000 !important;
+}
+
 /*
 @media (max-width: 899px) {
   .manga {
