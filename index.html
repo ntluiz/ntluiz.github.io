@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-bs-theme="dark">
 
 <head>
 	<meta charset="UTF-8">
@@ -18,22 +18,19 @@
 	<div id="edit" class="container align-items-center">
 		<!-- Button trigger modal -->
 		<div class="container">
-			<div class="row">
-				<div class="col-md-5 d-flex justify-content-center"">
-					<button type=" button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#newManga">New
-					Manga</button>
-					<button type="button" class="btn btn-secondary m-3" data-bs-toggle="modal"
-						data-bs-target="#newNovel">New Novel</button>
-				</div>
-			</div>
-			<div class="col-md-5 d-flex justify-content-center"">
-						<button type=" button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#upManga">Update
+			<div class="d-flex justify-content-center"">
+					<button type=" button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#newManga"><i
+					class="fa-sharp fa-solid fa-file-plus"></i>
 				Manga</button>
+				<button type="button" class="btn btn-secondary m-3" data-bs-toggle="modal"
+					data-bs-target="#newNovel">New Novel</button>
+				<button type=" button" class="btn btn-primary m-3" data-bs-toggle="modal"
+					data-bs-target="#upManga">Update
+					Manga</button>
 				<button type="button" class="btn btn-secondary m-3" data-bs-toggle="modal"
 					data-bs-target="#upNovel">Update Novel</button>
 			</div>
 		</div>
-	</div>
 	</div>
 
 	<!-- Modal New Manga -->
@@ -127,10 +124,10 @@
 	<!-- Estante -->
 	<div id="estante" class="container">
 		<div id="list" class="d-flex overflow-auto manga list">
-			
+
 		</div>
 		<div id="novellist" class="d-flex overflow-auto novels novellist">
-			
+
 		</div>
 	</div>
 
