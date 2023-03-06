@@ -15,24 +15,7 @@
 </head>
 
 <body class="align-items-center">
-	<div id="edit" class="container align-items-center">
-		<!-- Button trigger modal -->
-		<div class="container">
-			<div class="d-flex justify-content-center"">
-					<button type=" button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#newManga"><i
-					class="fa-sharp fa-solid fa-file-plus"></i>
-				Manga</button>
-				<button type="button" class="btn btn-secondary m-3" data-bs-toggle="modal"
-					data-bs-target="#newNovel">New Novel</button>
-				<button type=" button" class="btn btn-primary m-3" data-bs-toggle="modal"
-					data-bs-target="#upManga">Update
-					Manga</button>
-				<button type="button" class="btn btn-secondary m-3" data-bs-toggle="modal"
-					data-bs-target="#upNovel">Update Novel</button>
-			</div>
-		</div>
-	</div>
-
+	<h1 class="text-white text-center">Read List</h1>
 	<!-- Modal New Manga -->
 	<div class="modal fade" id="newManga" tabindex="-1" aria-labelledby="newMangaLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
@@ -123,17 +106,17 @@
 
 	<!-- Estante -->
 	<div id="estante" class="container">
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs m-3">
 			<li class="nav-item">
-				<a class="nav-link active text-white" aria-current="page" href="#">Manga</a>
+				<p class="nav-link active text-white tabmn">Mangas</p>
 			</li>
 			<li class="nav-item">
-				<button type=" button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#newManga">
+				<button type=" button" class="btn text-white tabmn" data-bs-toggle="modal" data-bs-target="#newManga">
 					<i class="fa-solid fa-file-circle-plus m-1"></i>
 				</button>
 			</li>
 			<li class="nav-item">
-				<button type=" button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#upManga">
+				<button type=" button" class="btn text-white tabmn" data-bs-toggle="modal" data-bs-target="#upManga">
 					<i class="fa-solid fa-file-pen m-1"></i>
 				</button>
 			</li>
@@ -141,17 +124,17 @@
 		<div id="list" class="d-flex overflow-auto manga list">
 
 		</div>
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs m-3">
 			<li class="nav-item">
-				<a class="nav-link active text-white" aria-current="page" href="#">Manga</a>
+				<p class="nav-link active text-white tabmn">Novels</p>
 			</li>
 			<li class="nav-item">
-				<button type=" button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#newNovel">
+				<button type=" button" class="btn text-white tabmn" data-bs-toggle="modal" data-bs-target="#newNovel">
 					<i class="fa-solid fa-file-circle-plus m-1"></i>
 				</button>
 			</li>
 			<li class="nav-item">
-				<button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#upNovel">
+				<button type="button" class="btn text-white tabmn" data-bs-toggle="modal" data-bs-target="#upNovel">
 					<i class="fa-solid fa-file-pen m-1"></i>
 				</button>
 			</li>
