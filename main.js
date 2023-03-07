@@ -151,7 +151,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dadosnovel")
   .then((data) => {
     for (const prodn of data) {
       const option2 = document.createElement("option");
-      option2.value = prodn.id;
+      option2.value = prodn.title;
       option2.textContent = prodn.title;
       select2.append(
         option2,
@@ -233,8 +233,8 @@ form2.addEventListener("submit", e => {
 var update2 = document.getElementById('updatenovel');
 
 update2.addEventListener("submit", e => {
-  var urlupdate2 = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel/id/' + document.getElementById('idupnovel').value;
-  console.log(urlupdate);
+  var urlupdate2 = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel/title/' + document.getElementById('titleupnovel').value;
+  console.log(urlupdate2);
   e.preventDefault();
   fetch(urlupdate2, {
     method: 'PATCH',
@@ -245,7 +245,7 @@ update2.addEventListener("submit", e => {
     body: JSON.stringify({
       data: {
         'last': document.getElementById('lastupnovel').value,
-        'date': dateup2.value,
+        'date': document.getElementById("dateupnovel").value,
       }
     })
   })

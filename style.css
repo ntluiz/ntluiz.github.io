@@ -1,8 +1,13 @@
 h1 {
   font-family: Helvetica;
 }
+
 .tabmn:hover {
   text-shadow: 1px 1px 5px #6b6b6b, 1px -1px 5px #6b6b6b, -1px 1px 5px #6b6b6b, -1px -1px 5px #6b6b6b;
+}
+
+.nav-link:hover {
+  cursor: pointer;
 }
 
 i {
