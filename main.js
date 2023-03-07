@@ -233,7 +233,7 @@ form2.addEventListener("submit", e => {
 var update2 = document.getElementById('updatenovel');
 
 update2.addEventListener("submit", e => {
-  var urlupdate2 = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel/title/' + document.getElementById('titleupnovel').value;
+  var urlupdate2 = 'https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dadosnovel/title/' + document.getElementById('titleupnovel').value;
   console.log(urlupdate2);
   e.preventDefault();
   fetch(urlupdate2, {
