@@ -129,7 +129,7 @@ update.addEventListener("submit", e => {
 // Novel//
 
 const myList2 = document.getElementById('novellist');
-const select2 = document.getElementById("idupnovel");
+const select2 = document.getElementById("titleupnovel");
 const dateup2 = document.getElementById("dateupnovel");
 var dataAtual = new Date();
 var dia = dataAtual.getDate();
