@@ -12,6 +12,8 @@ var segundos = dataAtual.getSeconds()
 var date = dia + "/" + mes + "/" + ano + " " + horas + ":" + minutos + ":" + segundos;
 dateup.value = date;
 
+
+
 fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
   .then((response) => {
     if (!response.ok) {
@@ -52,11 +54,12 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       cmanga.style.backgroundImage = "url(" + product.image + ")";
       const ctext = document.createElement("div");
       ctext.className = "card-img-overlay d-flex justify-content-between align-items-baseline";
+      const cspan = document.createElement("span");
+      cspan.id = "s" + product.id;
+      cspan.className = "position-absolute top-0 start-100 translate-middle badge bg-danger";
       const clast = document.createElement("h5");
       clast.className = "card-title last";
       clast.textContent = product.last;
-      const cicon = document.createElement("i");
-      cicon.className = "fa-solid fa-bars";
       const cid = document.createElement("h5");
       cid.className = "id";
       cid.textContent = product.id;
@@ -66,15 +69,30 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       document.getElementById("dateinput").value =
         date;
       ctext.append(
-        clast, cicon,
+        clast,
       );
       cmanga.append(
-        ctext,
+        ctext, cspan,
       );
       col.append(
         cmanga,
       );
       myList.appendChild(col);
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var ok = this.responseText.indexOf("Chapter " + product.last + 1);
+          if (ok > 1) {
+            document.getElementById("s" + product.id).innerText = "New!";
+          } else {
+            document.getElementById("s" + product.id).innerText = "";
+          }
+        }
+      };
+      xhttp.open("GET", product.site, true);
+      xhttp.send();
+
     }
   })
   .catch((error) => {
