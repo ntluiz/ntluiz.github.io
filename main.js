@@ -83,6 +83,8 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
           var ok = this.responseText.indexOf("Chapter " + product.last + 1);
+          console.log(ok);
+          console.log(document.getElementById("s" + product.id));
           if (ok > 1) {
             document.getElementById("s" + product.id).innerText = "New!";
           } else {
