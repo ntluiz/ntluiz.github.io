@@ -56,7 +56,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       ctext.className = "card-img-overlay d-flex justify-content-between align-items-baseline";
       const cspan = document.createElement("span");
       cspan.id = "s" + product.id;
-      cspan.className = "position-absolute top-0 start-100 translate-middle badge bg-danger";
+      cspan.className = "position-absolute top-0 start-100 translate-middle badge bg-danger newalert";
       const clast = document.createElement("h5");
       clast.className = "card-title last";
       clast.textContent = product.last;
@@ -84,7 +84,6 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
         if (this.readyState == 4 && this.status == 200) {
           var ok = this.responseText.indexOf("Chapter " + product.last + 1);
           console.log(ok);
-          console.log(document.getElementById("s" + product.id));
           if (ok > 1) {
             document.getElementById("s" + product.id).innerText = "New!";
           } else {
