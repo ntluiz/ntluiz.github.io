@@ -227,20 +227,20 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel")
 
       myList2.appendChild(coln);
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
+      var xhttpn = new XMLHttpRequest();
+      xhttpn.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          var ok = this.responseText.indexOf("Chapter " + product.last + 1);
+          var ok = this.responseText.indexOf("Chapter " + productn.last + 1);
           console.log(ok);
           if (ok > 1) {
-            document.getElementById("s" + product.id).innerText = "New!";
+            document.getElementById("sn" + productn.id).innerText = "New!";
           } else {
-            document.getElementById("s" + product.id).innerText = "";
+            document.getElementById("sn" + productn.id).innerText = "";
           }
         }
       };
-      xhttp.open("GET", product.site, true);
-      xhttp.send();
+      xhttpn.open("GET", productn.site, true);
+      xhttpn.send();
     }
   })
   .catch((error) => {
