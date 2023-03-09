@@ -56,6 +56,7 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=manga")
       ctext.className = "card-img-overlay d-flex justify-content-between align-items-baseline";
       const cspan = document.createElement("span");
       cspan.id = "s" + product.id;
+      cspan.innerHtml = "New!";
       cspan.className = "position-absolute top-0 start-100 translate-middle badge bg-danger newalert";
       const clast = document.createElement("h5");
       clast.className = "card-title last";
@@ -230,12 +231,12 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel")
       var xhttpn = new XMLHttpRequest();
       xhttpn.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          var ok = this.responseText.indexOf("Chapter " + productn.last + 1);
-          console.log(ok);
-          if (ok > 1) {
-            document.getElementById("sn" + productn.id).innerText = "New!";
+          var okn = this.responseText.indexOf("Chapter " + productn.last + 1);
+          console.log(okn);
+          if (okn > 1) {
+            document.getElementById("sn" + productn.id).innerHtml = "New!";
           } else {
-            document.getElementById("sn" + productn.id).innerText = "";
+            document.getElementById("sn" + productn.id).innerHtml = "";
           }
         }
       };
