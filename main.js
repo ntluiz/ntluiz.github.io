@@ -200,11 +200,12 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel")
       cnovel.style.backgroundImage = "url(" + productn.image + ")";
       const ctextn = document.createElement("div");
       ctextn.className = "card-img-overlay d-flex justify-content-between align-items-baseline";
+      const cspann = document.createElement("span");
+      cspann.id = "sn" + productn.id;
+      cspann.className = "position-absolute top-0 start-100 translate-middle badge bg-danger newalert";
       const clastn = document.createElement("h5");
       clastn.className = "card-title last";
       clastn.textContent = productn.last;
-      const ciconn = document.createElement("i");
-      ciconn.className = "fa-solid fa-bars";
       const cidn = document.createElement("h5");
       cidn.className = "id";
       cidn.textContent = productn.id;
@@ -215,16 +216,31 @@ fetch("https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=novel")
         date2;
 
       ctextn.append(
-        clastn, ciconn,
+        clastn,
       );
       cnovel.append(
-        ctextn,
+        ctextn, cspann,
       );
       coln.append(
         cnovel,
       );
 
       myList2.appendChild(coln);
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var ok = this.responseText.indexOf("Chapter " + product.last + 1);
+          console.log(ok);
+          if (ok > 1) {
+            document.getElementById("s" + product.id).innerText = "New!";
+          } else {
+            document.getElementById("s" + product.id).innerText = "";
+          }
+        }
+      };
+      xhttp.open("GET", product.site, true);
+      xhttp.send();
     }
   })
   .catch((error) => {
