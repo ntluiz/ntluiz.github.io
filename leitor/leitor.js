@@ -23,9 +23,7 @@ ok.addEventListener("click", function () {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var txt = xhttp.response;
             var title1 = document.querySelector('[property="og:novel:chapter_name"]');
-            var text = document.querySelector(".txt");
             document.getElementById("hide").innerHTML = xhttp.response;
             var filhos = document.querySelector(".txt").childNodes.length - 3;
             for (var i = 5; i < filhos; i++) {
