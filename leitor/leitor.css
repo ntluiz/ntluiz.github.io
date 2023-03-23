@@ -16,6 +16,11 @@ input:focus {
         margin-top: 15vh;
     }
 
+    p {
+        font-family: math;
+        font-size: 18px;
+    }
+
     ::-webkit-scrollbar {
         width: 10px;
     }
@@ -35,6 +40,11 @@ input:focus {
 @media (max-width: 899px) {
     #scroll {
         margin-top: 17vh;
+    }
+
+    p {
+        font-family: math;
+        font-size: 16px;
     }
 
     ::-webkit-scrollbar {
