@@ -15,17 +15,31 @@
 </head>
 
 <body>
-    <h1 id="title" class="text-center mt-5">Teste</h1>
-    <nav aria-label="Page navigation example">
+    <h1 id="title" class="text-center mt-5">Choose Your Chapter</h1>
+    <nav aria-label="Page navigation example justify-content-center">
         <ul class="pagination justify-content-center">
             <div class="btn-group justify-content-center mt-3" role="group" aria-label="Basic example">
-                <button type="button" id="plus" class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
-                <button type="button" id="minus" class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
-                <button type="button" id="top" class="btn btn-primary"><i class="fa-solid fa-arrow-up"></i></button>
+                <button type="button" id="plus" class="btn btn-dark border-1 border-light border-opacity-25"><i
+                        class="fa-solid fa-plus"></i></button>
+                <button type="button" id="minus" class="btn btn-dark border-1 border-light border-opacity-25"><i
+                        class="fa-solid fa-minus"></i></button>
+                <button type="button" id="top" class="btn btn-dark border-1 border-light border-opacity-25"><i
+                        class="fa-solid fa-arrow-up"></i></button>
+            </div>
+            <div class="btn-group justify-content-center mt-3" role="group" aria-label="Basic example">
+                <input class="border-1 border-light border-opacity-25 rounded-start-pill ms-2 ps-3"
+                    id="chapter"></input>
+                <button type="button" id="ok" class="btn rounded-end-pill border-light border-opacity-25 btn-dark"><i
+                        class="fa-sharp fa-solid fa-circle-check"></i></button>
+            </div>
+            <div class="btn-group justify-content-center mt-3" role="group" aria-label="Basic example">
+                <button type="button" id="prev" class="btn btn-dark ms-2 border-1 border-light border-opacity-25"><i
+                        class="fa-solid fa-arrow-left"></i></button>
+                <button type="button" id="next" class="btn btn-dark border-1 border-light border-opacity-25"><i
+                        class="fa-solid fa-arrow-right"></i></button>
             </div>
         </ul>
-        <input id="chapter"></input>
-        <button type="button" id="ok" class="btn btn-primary">ok</button>
+
     </nav>
     <div id="scroll" class="container"></div>
     <p id="hide"></p>

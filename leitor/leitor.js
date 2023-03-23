@@ -19,13 +19,12 @@ up.addEventListener("click", function () {
     document.getElementById("scroll").scrollBy(0, 0);
 });
 ok.addEventListener("click", function () {
-    var url = "https://freewebnovel.com/tyranny-of-steel/chapter-350.html";
+    var url = "https://freewebnovel.com/tyranny-of-steel/chapter-" + input.value + ".html";
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("hide").innerHTML = xhttp.response;
-            var title1 = document.querySelector('[property="og:novel:chapter_name"]');
-            title1.innerHTML = xhttp.response.querySelector('[property="og:novel:chapter_name"]');
+            title.innerHTML = document.querySelector('[property="og:novel:chapter_name"]').content;
             console.log(document.querySelector('[property="og:novel:chapter_name"]'));
             console.log(document.querySelector("#txt"));
             var filhos = document.querySelector(".txt").childNodes.length - 3;
