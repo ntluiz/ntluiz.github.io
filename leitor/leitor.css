@@ -1,9 +1,31 @@
 .container {
-    width: 100vh;
-    height: 80vh;
+    width: 80%;
+    height: 81vh;
     overflow: auto;
 }
 
 #hide {
     display: none;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+@media (min-width: 900px) {
+    .container::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .container::-webkit-scrollbar-track {
+        background: rgb(255, 255, 255);
+        border-radius: 20px;
+    }
+
+    .container::-webkit-scrollbar-thumb {
+        background-color: #212529;
+        border-radius: 20px;
+        border: 2px solid rgb(255, 255, 255);
+    }
 }

@@ -8,7 +8,7 @@ const ok = document.getElementById("ok");
 
 
 plus.addEventListener("click", function pageScroll() {
-    scroll.scrollBy(0, 15);
+    scroll.scrollBy(0, 20);
     scrolldelay = setTimeout(pageScroll, 5000);
 });
 minus.addEventListener("click", function () {
