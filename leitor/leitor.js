@@ -8,15 +8,14 @@ const ok = document.getElementById("ok");
 
 
 plus.addEventListener("click", function pageScroll() {
-    scroll.scrollBy(0, 20);
+    window.scrollBy(0, 20);
     scrolldelay = setTimeout(pageScroll, 5000);
 });
 minus.addEventListener("click", function () {
     clearTimeout(scrolldelay);
 });
 up.addEventListener("click", function () {
-    document.getElementById("scroll").scrollTo(0, 0);
-    document.getElementById("scroll").scrollBy(0, 0);
+    window.scrollTo(0, 0);
 });
 ok.addEventListener("click", function () {
     var url = "https://freewebnovel.com/tyranny-of-steel/chapter-" + input.value + ".html";
