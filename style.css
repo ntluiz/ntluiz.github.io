@@ -32,18 +32,24 @@ i {
   padding: 0;
 }
 
-.fa-bars {
-  text-shadow: 1px 1px 5px white, 1px -1px 5px white, -1px 1px 5px white, -1px -1px 5px white;
-}
-
-a:hover {
+a.card:hover {
   text-decoration: none !important;
   color: #000000 !important;
 }
 
-a {
+a.card {
   text-decoration: none !important;
   color: #000000 !important;
+}
+
+a.btn:hover {
+  text-decoration: none !important;
+  color: #ffffff !important;
+}
+
+a.btn {
+  text-decoration: none !important;
+  color: #ffffff !important;
 }
 
 @media (max-width: 899px) {
@@ -71,171 +77,5 @@ a {
     background-color: #212529;
     border-radius: 20px;
     border: 2px solid rgb(255, 255, 255);
-  }
-}
-
-/*
-@media (max-width: 899px) {
-  .manga {
-    height: 80px;
-    width: 95%;
-    display: block;
-    border: 1px solid #00767ed8;
-    background-color: #00abb8;
-    margin-bottom: 15px;
-    display: flex;
-    padding: 8px 16px;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
-    align-items: center;
-  }
-
-  .image {
-    margin: 0 8px;
-    border: 1px solid #00767ed8;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #cccccc;
-    background-size: cover;
-  }
-
-  .text {
-    font-family: 'Rockwell';
-    float: left;
-    font-size: 12px;
-    vertical-align: center;
-    flex: 1;
-    padding: 0 8px;
-  }
-
-  .id {
-    font-family: 'Rockwell';
-    vertical-align: center;
-    font-size: 15px;
-    float: left;
-    padding: 0;
-    margin: 0;
-    color: #000000;
-  }
-
-  .title {
-    font-family: 'Rockwell';
-    font-size: 16px;
-    color: #000000;
-    font-weight: 600;
-  }
-
-  .last {
-    font-family: 'Rockwell';
-    margin-top: 0;
-    margin-bottom: 0;
-    float: right;
-    font-size: 16px;
-    font-weight: 700;
-    color: #000000;
-  }
-
-  a:hover {
-    text-decoration: none !important;
-    color: #000000 !important;
-  }
-
-  .novel {
-    height: 80px;
-    width: 95%;
-    display: block;
-    border: 1px solid #6c757dc5;
-    background-color: #6c757d;
-    margin-bottom: 15px;
-    display: flex;
-    padding: 8px 16px;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
-    align-items: center;
-  }
-
-}
-
-@media (min-width: 900px) {
-
-
-  .manga {
-    height: 80px;
-    width: 95%;
-    display: block;
-    border: 1px solid #00767ed8;
-    background-color: #00abb8;
-    margin-bottom: 15px;
-    display: flex;
-    padding: 8px 16px;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
-    align-items: center;
-  }
-
-  .image {
-    margin: 0 8px;
-    border: 1px solid #00767ed8;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #cccccc;
-    background-size: cover;
-  }
-
-  .text {
-    font-family: 'Rockwell';
-    float: left;
-    font-size: 15px;
-    vertical-align: center;
-    flex: 1;
-    padding: 0 16px;
-  }
-
-  .id {
-    font-family: 'Rockwell';
-    vertical-align: center;
-    font-size: 18px;
-    float: left;
-    padding: 0;
-    margin: 0;
-    color: #000000;
-  }
-
-  .title {
-    font-family: 'Rockwell';
-    font-size: 20px;
-    color: #000000;
-    font-weight: 600;
-  }
-
-  .last {
-    font-family: 'Rockwell';
-    margin-top: 0;
-    margin-bottom: 0;
-    float: right;
-    font-size: 20px;
-    font-weight: 700;
-    color: #000000;
-  }
-
-  a:hover {
-    text-decoration: none !important;
-    color: #000000 !important;
-  }
-
-  .novel {
-    height: 80px;
-    width: 95%;
-    display: block;
-    border: 1px solid #6c757dc5;
-    background-color: #6c757d;
-    margin-bottom: 15px;
-    display: flex;
-    padding: 8px 16px;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
-    align-items: center;
   }
 }
