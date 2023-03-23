@@ -1,11 +1,14 @@
-.container {
-    width: 80%;
-    height: 81vh;
-    overflow: auto;
+#scroll {
+    height: 81vh !important;
+    overflow: auto !important;
 }
 
 #hide {
     display: none;
+}
+
+input {
+    width: 100px;
 }
 
 input:focus {
