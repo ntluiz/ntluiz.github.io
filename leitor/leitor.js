@@ -6,10 +6,19 @@ const title = document.getElementById("title");
 const input = document.getElementById("chapter");
 const ok = document.getElementById("ok");
 
-
+Object.defineProperty(window, 'mobile', {
+    get() {
+        return window.innerWidth <= 425;
+    }
+})
 plus.addEventListener("click", function pageScroll() {
-    window.scrollBy(0, 20);
-    scrolldelay = setTimeout(pageScroll, 5000);
+    if (mobile) {
+        window.scrollBy(0, 50);
+        scrolldelay = setTimeout(pageScroll, 5000);
+    } else {
+        window.scrollBy(0, 20);
+        scrolldelay = setTimeout(pageScroll, 5000);
+    }
 });
 minus.addEventListener("click", function () {
     clearTimeout(scrolldelay);

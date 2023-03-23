@@ -13,19 +13,40 @@ input:focus {
 
 @media (min-width: 900px) {
     #scroll {
-        margin-top: 200px;
+        margin-top: 15vh;
     }
-    
-    .container::-webkit-scrollbar {
+
+    ::-webkit-scrollbar {
         width: 10px;
     }
 
-    .container::-webkit-scrollbar-track {
+    ::-webkit-scrollbar-track {
         background: rgb(255, 255, 255);
         border-radius: 20px;
     }
 
-    .container::-webkit-scrollbar-thumb {
+    ::-webkit-scrollbar-thumb {
+        background-color: #212529;
+        border-radius: 20px;
+        border: 2px solid rgb(255, 255, 255);
+    }
+}
+
+@media (max-width: 899px) {
+    #scroll {
+        margin-top: 17vh;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgb(255, 255, 255);
+        border-radius: 20px;
+    }
+
+    ::-webkit-scrollbar-thumb {
         background-color: #212529;
         border-radius: 20px;
         border: 2px solid rgb(255, 255, 255);
