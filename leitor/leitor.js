@@ -38,7 +38,12 @@ ok.addEventListener("click", function () {
             var filhos = document.querySelector(".txt").childNodes.length - 3;
             for (var i = 5; i < filhos; i++) {
                 var teste = document.createElement("p");
-                teste.innerHTML = document.querySelector(".txt").childNodes[i].innerText;
+                let x = document.querySelector(".txt").childNodes[i].innerText;
+                if (x === undefined) {
+                    teste.innerHTML = "";
+                } else {
+                    teste.innerHTML = document.querySelector(".txt").childNodes[i].innerText;
+                }
                 scroll.append(teste);
             }
             // console.log();
