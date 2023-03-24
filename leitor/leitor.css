@@ -39,7 +39,7 @@ input:focus {
 
 @media (max-width: 899px) {
     #scroll {
-        margin-top: 17vh;
+        margin-top: 20vh;
     }
 
     p {
