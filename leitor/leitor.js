@@ -2,6 +2,7 @@ const plus = document.getElementById("plus");
 const minus = document.getElementById("minus");
 const up = document.getElementById("top");
 const sizeup = document.getElementById("sizeup");
+const sizedown = document.getElementById("sizedown");
 const scroll = document.getElementById("scroll");
 const title = document.getElementById("title");
 const input = document.getElementById("chapter");
@@ -12,6 +13,7 @@ Object.defineProperty(window, 'mobile', {
         return window.innerWidth <= 425;
     }
 })
+
 plus.addEventListener("click", function pageScroll() {
     if (mobile) {
         window.scrollBy(0, 50);
@@ -21,18 +23,28 @@ plus.addEventListener("click", function pageScroll() {
         scrolldelay = setTimeout(pageScroll, 5000);
     }
 });
+
 minus.addEventListener("click", function () {
     clearTimeout(scrolldelay);
 });
+
 up.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
-sizeup.addEventListener("click", function increaseFontSizeBy1px() {
+
+sizeup.addEventListener("click", function () {
     txt = document.getElementById("scroll");
     style = window.getComputedStyle(txt, null).getPropertyValue("font-size");
     currentSize = parseFloat(style);
     txt.style.fontSize = currentSize + 1 + "px";
 });
+sizedown.addEventListener("click", function () {
+    txt = document.getElementById("scroll");
+    style = window.getComputedStyle(txt, null).getPropertyValue("font-size");
+    currentSize = parseFloat(style);
+    txt.style.fontSize = currentSize - 1 + "px";
+});
+
 function getText() {
     var url = "https://freewebnovel.com/tyranny-of-steel/chapter-" + input.value + ".html";
     const elements = document.getElementsByClassName("noveltext");
