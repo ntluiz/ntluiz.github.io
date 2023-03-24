@@ -1,6 +1,7 @@
 const plus = document.getElementById("plus");
 const minus = document.getElementById("minus");
 const up = document.getElementById("top");
+const sizeup = document.getElementById("sizeup");
 const scroll = document.getElementById("scroll");
 const title = document.getElementById("title");
 const input = document.getElementById("chapter");
@@ -26,8 +27,19 @@ minus.addEventListener("click", function () {
 up.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
+sizeup.addEventListener("click", function increaseFontSizeBy1px() {
+    txt = document.getElementById("scroll");
+    style = window.getComputedStyle(txt, null).getPropertyValue("font-size");
+    currentSize = parseFloat(style);
+    txt.style.fontSize = currentSize + 1 + "px";
+});
+
 ok.addEventListener("click", function () {
     var url = "https://freewebnovel.com/tyranny-of-steel/chapter-" + input.value + ".html";
+    const elements = document.getElementsByClassName("noveltext");
+    while (elements.length > 0) {
+        elements[0].parentNode.removeChild(elements[0]);
+    }
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -38,6 +50,7 @@ ok.addEventListener("click", function () {
             var filhos = document.querySelector(".txt").childNodes.length - 3;
             for (var i = 5; i < filhos; i++) {
                 var teste = document.createElement("p");
+                teste.className = "noveltext"
                 let x = document.querySelector(".txt").childNodes[i].innerText;
                 if (x === undefined) {
                     teste.innerHTML = "";
