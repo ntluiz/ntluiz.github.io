@@ -5,6 +5,7 @@ const sizeup = document.getElementById("sizeup");
 const sizedown = document.getElementById("sizedown");
 const scroll = document.getElementById("scroll");
 const title = document.getElementById("title");
+const select = document.getElementById("urlselect");
 const input = document.getElementById("chapter");
 const ok = document.getElementById("ok");
 
@@ -46,7 +47,7 @@ sizedown.addEventListener("click", function () {
 });
 
 function getText() {
-    var url = "https://freewebnovel.com/tyranny-of-steel/chapter-" + input.value + ".html";
+    var url = select.value + input.value + ".html";
     const elements = document.getElementsByClassName("noveltext");
     while (elements.length > 0) {
         elements[0].parentNode.removeChild(elements[0]);
