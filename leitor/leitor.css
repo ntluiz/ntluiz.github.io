@@ -13,7 +13,7 @@ input:focus {
 
 @media (min-width: 900px) {
     #scroll {
-        margin-top: 15vh;
+        margin-top: 20vh;
     }
 
     p {
@@ -39,7 +39,7 @@ input:focus {
 
 @media (max-width: 899px) {
     #scroll {
-        margin-top: 20vh;
+        margin-top: 25vh;
     }
 
     p {
