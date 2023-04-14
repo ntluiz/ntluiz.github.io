@@ -11,12 +11,18 @@
   // Obter os dados do formulário
   $title = mysqli_real_escape_string($conexao, $_POST['title']);
   $last = mysqli_real_escape_string($conexao, $_POST['last']);
-  $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-  $link = mysqli_real_escape_string($conexao, $_POST['link']);
-  $url = $link . $last + 1;
+  
+  if(isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+    $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+  } else {
+    $image = '';
+  }
+
+  $url = mysqli_real_escape_string($conexao, $_POST['url']);
+  $link = $url . ($last + 1);
 
   // Inserir o novo registro na tabela
-  $query = "INSERT INTO dados-manga (title, last, image, link, url) VALUES ('$title', '$last', '$image', '$link', '$url')";
+  $query = "INSERT INTO manga (title, last, image, url, link) VALUES ('$title', '$last', '$image', '$url', '$link')";
   $result = mysqli_query($conexao, $query);
 
   // Verificar se a inserção foi bem-sucedida

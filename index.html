@@ -26,7 +26,7 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<form action="adicionar.php" method="POST">
+					<form id="form-adicionar" action="adicionar.php" method="POST" enctype="multipart/form-data">
 						<label for="title">Título:</label>
 						<input type="text" name="title" class="form-control"><br>
 
@@ -85,7 +85,7 @@
 							<select name="title" class="form-select">
 								<?php
 								// Conectar ao banco de dados
-								$conexao = mysqli_connect("localhost", "usuario", "senha", "id20597247_leiaonline");
+								$conexao = mysqli_connect("localhost", "id20597247_admin", "Ii@03099799Nn", "id20597247_leiaonline");
 						
 								// Verificar se a conexão foi estabelecida com sucesso
 								if (mysqli_connect_errno()) {
@@ -94,7 +94,7 @@
 								}
 						
 								// Selecionar os títulos existentes na tabela
-								$query = "SELECT DISTINCT title FROM dados-manga ORDER BY title";
+								$query = "SELECT DISTINCT title FROM manga ORDER BY title";
 								$result = mysqli_query($conexao, $query);
 						
 								// Gerar as opções do select com base nos títulos selecionados
@@ -112,7 +112,6 @@
 
 							<input type="submit" value="Atualizar" class="btn btn-primary mt-2 align-self-center">
 						</form>
-					</form>
 				</div>
 			</div>
 		</div>
