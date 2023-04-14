@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Mangás</title>
+</head>
+
+<body>
+    <h1>Lista de Mangás</h1>
+
+    <form action="adicionar.php" method="POST">
+        <label for="title">Título:</label>
+        <select name="title" class="form-select">
+            <?php
+           
+            require_once "optionsmanga.php";
+            foreach ($titulos as $titulo) {
+                echo "<option value=\"$titulo\">$titulo</option>";
+            }
+            // Fechar a conexão com o banco de dados
+            mysqli_close($conexao);
+            ?>
+        </select>
+
+        <label for="last">Último Capítulo:</label>
+        <input type="text" name="last" class=" form-control"><br>
+
+        <input type="submit" value="Adicionar" class="btn btn-primary mt-2 align-self-center">
+    </form>
+
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Último Capítulo</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            require_once 'tabela.php';
+            
+            // Fechar a conexão com o banco de dados
+            mysqli_close($conexao);
+            ?>
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php if (isset($_SESSION['mensagem'])): ?>
+        <script>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['icone_mensagem']; ?>',
+                title: '<?php echo $_SESSION['mensagem']; ?>',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>
+        <?php unset($_SESSION['mensagem']); ?>
+    <?php endif; ?>
+</body>
+
+</html>

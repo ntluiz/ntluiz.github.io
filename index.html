@@ -26,7 +26,8 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<form id="form-adicionar" action="adicionar.php" method="POST" enctype="multipart/form-data">
+					<form id="form-adicionar-manga" action="adicionarmanga.php" method="POST"
+						enctype="multipart/form-data">
 						<label for="title">Título:</label>
 						<input type="text" name="title" class="form-control"><br>
 
@@ -54,16 +55,21 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<form id="addnovel" method="post"
-						action="https://sheetdb.io/api/v1/aux5lgr4vfrx2?sheet=dados_novel">
-						ID: <input class="form-control" name="data[id]" value="=LIN()-1">
-						Title: <input class="form-control" name="data[title]">
-						Last: <input class="form-control" name="data[last]">
-						Url: <input class="form-control" name="data[url]">
-						Link: <input class="form-control" id="linkinputnovel" name="data[link]">
-						Image: <input class=" form-control" name="data[image]">
-						Date: <input class=" form-control" id="dateinputnovel" name="data[date]">
-						<button class="btn btn-primary mt-2 align-self-center" type="submit">Add</button>
+					<form id="form-adicionar-novel" action="adicionarnovel.php" method="POST"
+						enctype="multipart/form-data">
+						<label for="title">Título:</label>
+						<input type="text" name="title" class="form-control"><br>
+
+						<label for="last">Último Capítulo:</label>
+						<input type="text" name="last" class="form-control"><br>
+
+						<label for="image">Imagem:</label>
+						<input type="file" name="image" class="form-control"><br>
+
+						<label for="url">Url:</label>
+						<input type="text" name="url" class="form-control"><br>
+
+						<input type="submit" value="Adicionar" class="btn btn-primary mt-2 align-self-center">
 					</form>
 				</div>
 			</div>
@@ -80,31 +86,10 @@
 				</div>
 				<div class="modal-body">
 					<form id="update">
-						<form action="atualizar.php" method="POST">
+						<form id="form-atualizar-manga" action="atualizar.php" method="POST">
 							<label for="title">Título:</label>
 							<select name="title" class="form-select">
-								<?php
-								// Conectar ao banco de dados
-								$conexao = mysqli_connect("localhost", "id20597247_admin", "Ii@03099799Nn", "id20597247_leiaonline");
-						
-								// Verificar se a conexão foi estabelecida com sucesso
-								if (mysqli_connect_errno()) {
-								  echo "Não foi possível conectar ao banco de dados: " . mysqli_connect_error();
-								  exit();
-								}
-						
-								// Selecionar os títulos existentes na tabela
-								$query = "SELECT DISTINCT title FROM manga ORDER BY title";
-								$result = mysqli_query($conexao, $query);
-						
-								// Gerar as opções do select com base nos títulos selecionados
-								while ($row = mysqli_fetch_assoc($result)) {
-								  echo "<option value=\"" . $row['title'] . "\">" . $row['title'] . "</option>";
-								}
-						
-								// Fechar a conexão com o banco de dados
-								mysqli_close($conexao);
-							  ?>
+								<?php include('optionsmanga.php'); ?>
 							</select>
 
 							<label for="last">Último Capítulo:</label>
